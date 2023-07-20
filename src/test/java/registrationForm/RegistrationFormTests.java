@@ -16,8 +16,6 @@ public class RegistrationFormTests {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
-
-
     }
 
     @Test
@@ -41,14 +39,16 @@ public class RegistrationFormTests {
         $("select.react-datepicker__month-select").selectOption("March");
         $(".react-datepicker__day--010").click();
 
-        $("#subjectsInput").setValue("  ");
-        $("#subjectsWrapper").$(byText("Computer Science")).click();
+        //$("#subjectsInput").setValue("  ");
+        //$("#subjectsWrapper").$(byText("Computer Science")).click();
+
+        $("#subjectsInput").setValue("Computer Science").pressEnter();
 
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#hobbiesWrapper").$(byText("Reading")).click();
         $("#hobbiesWrapper").$(byText("Music")).click();
 
-        $("input#uploadPicture").uploadFile(new File("src/test/resources/text.txt"));
+        $("input#uploadPicture").uploadFromClasspath("text.txt");
 
         $("textarea#currentAddress").setValue("Address");
 
