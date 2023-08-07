@@ -1,4 +1,4 @@
-package registrationform;
+package tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
@@ -9,20 +9,20 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class RegistrationFormTests {
+public class RegistrationFormTests extends TestBase{
 
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
+        Configuration.holdBrowserOpen = true;
     }
 
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
-
-
+        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
@@ -76,7 +76,7 @@ public class RegistrationFormTests {
 
         $("button#closeLargeModal").click();
 
-
-        //Configuration.holdBrowserOpen=true;
     }
+
 }
+
