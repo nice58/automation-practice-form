@@ -12,6 +12,7 @@ public class RegistrationTestsWithPageObjects extends TestBase {
     void fillFormTest() {
 
         registrationPage.openPage()
+                .remove()
                 .setFirstName("Sofy")
                 .setLastName("Chan")
                 .setUserEmail("schan@email.com")
