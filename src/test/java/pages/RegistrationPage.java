@@ -1,8 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import pages.components.RegistrationPageAssertModal;
-import pages.components.RegistrationPageCalendarComponent;
+import pages.components.CalendarComponent;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -10,8 +9,8 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationPage {
 
-    RegistrationPageCalendarComponent calendar = new RegistrationPageCalendarComponent();
-    RegistrationPageAssertModal assertModal = new RegistrationPageAssertModal();
+    CalendarComponent calendar = new CalendarComponent();
+    RegistrationPageModal assertModal = new RegistrationPageModal();
 
     SelenideElement
             firstNameInput = $("#firstName"),
@@ -66,7 +65,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setUserNumber(String value) {
+    public RegistrationPage setMobileNumber(String value) {
         userNumber.setValue(value);
 
         return this;
@@ -74,7 +73,7 @@ public class RegistrationPage {
 
     public RegistrationPage setBirthDate(String day, String month, String year) {
         bithDateInput.click();
-        calendar.setDate(day, month, year);
+        calendar.setDate("#dateOfBirthInput", day, month, year);
 
         return this;
     }
@@ -97,7 +96,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setAddres(String value) {
+    public RegistrationPage setAddress(String value) {
         userAddres.setValue(value);
 
         return this;
@@ -122,16 +121,6 @@ public class RegistrationPage {
 
         return this;
     }
-
-    public RegistrationPage checkHeader() {
-        assertModal.checkHeader();
-
-        return this;
-    }
-
-    public RegistrationPage checkText(String key, String value) {
-        assertModal.checkText(key, value);
-
-        return this;
-    }
 }
+
+

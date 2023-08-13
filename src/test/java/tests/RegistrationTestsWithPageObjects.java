@@ -2,11 +2,14 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
+import pages.RegistrationPageModal;
 
 
 public class RegistrationTestsWithPageObjects extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
+    RegistrationPageModal registrationPageModal = new RegistrationPageModal();
+
 
     @Test
     void fillFormTest() {
@@ -17,17 +20,17 @@ public class RegistrationTestsWithPageObjects extends TestBase {
                 .setLastName("Chan")
                 .setUserEmail("schan@email.com")
                 .setGender("Female")
-                .setUserNumber("8000000001")
+                .setMobileNumber("8000000001")
                 .setBirthDate("04", "July", "2008")
                 .setSubjects("Computer Science")
                 .setHobby("Music")
                 .setPicture("text.txt")
-                .setAddres("Address")
+                .setAddress("Address")
                 .setState("Rajasthan")
                 .setCity("Jaiselmer")
                 .setSubmit();
 
-        registrationPage.checkHeader()
+        registrationPageModal.checkHeader()
                 .checkText("Student Name", "Sofy Chan")
                 .checkText("Student Email", "schan@email.com")
                 .checkText("Gender", "Female")
