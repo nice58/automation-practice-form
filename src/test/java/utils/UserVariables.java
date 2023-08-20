@@ -2,21 +2,19 @@ package utils;
 
 public class UserVariables {
 
-    FakerUtils fakerUtils = new FakerUtils();
-
     public String
-            firstName = fakerUtils.getFirstName(),
-            lastName = fakerUtils.getLastName(),
-            email = fakerUtils.getUserEmail(),
-            gender = fakerUtils.getUserGender(),
-            birthMonth = fakerUtils.getUserBirthMonth(),
-            birthYear = fakerUtils.getUserBirthYear(),
-            birthDay = fakerUtils.getUserBirthDay(birthYear,birthMonth),
-            number = fakerUtils.getUserNumber(),
-            subject = fakerUtils.getUserSubject(),
-            hobby = fakerUtils.getUserHobby(),
-            address = fakerUtils.getUserAddress(),
-            state = fakerUtils.getUserState(),
-            city = fakerUtils.getUserCity(state),
-            file = fakerUtils.getUserFile();
+            firstName = FakerUtils.getFirstName(),
+            lastName = FakerUtils.getLastName(),
+            email = FakerUtils.getUserEmail(),
+            gender = FakerUtils.getUserGender(),
+            birthMonth = FakerUtils.getUserBirthMonth(),
+            birthYear = FakerUtils.getUserBirthYear(),
+            birthDay = FakerUtils.getUserBirthDay(birthYear,birthMonth),
+            number = FakerUtils.getUserNumber(),
+            subject = FakerUtils.getUserSubject(),
+            hobby = FakerUtils.getUserHobby(),
+            address = FakerUtils.getUserAddress(),
+            state = FakerUtils.getUserState(),
+            city = FakerUtils.getUserCity(state),
+            file = FakerUtils.getUserFile();
 }

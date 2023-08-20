@@ -6,17 +6,14 @@ import pages.RegistrationPageModal;
 import utils.UserVariables;
 
 
-public class RegistrationTestsWithPageObjectsWithFaker extends TestBase {
+public class RegistrationWithPageObjectsWithFakerTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationPageModal registrationPageModal = new RegistrationPageModal();
 
-    UserVariables user = new UserVariables();
-
-
     @Test
     void fillFormTest() {
-
+        UserVariables user = new UserVariables();
         registrationPage.openPage()
                 .remove()
                 .setFirstName(user.firstName)

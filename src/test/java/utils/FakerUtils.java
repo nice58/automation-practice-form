@@ -9,77 +9,71 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 public class FakerUtils {
-    Faker faker = new Faker();
-
-    public int getRandomInt(int min, int max) {
-        return ThreadLocalRandom.current().nextInt(min, max + 1);
+    public static String getFirstName() {
+        return Faker.instance().name().firstName();
     }
 
-    public String getFirstName() {
-        return faker.name().firstName();
+    public static String getLastName() {
+        return Faker.instance().name().lastName();
     }
 
-    public String getLastName() {
-        return faker.name().lastName();
+    public static String getUserEmail() {
+        return Faker.instance().internet().emailAddress();
     }
 
-    public String getUserEmail() {
-        return faker.internet().emailAddress();
-    }
-
-    public String getUserGender() {
+    public static String getUserGender() {
         String[] gender = {"Male", "Female", "Other"};
-        return faker.options().option(gender);
+        return Faker.instance().options().option(gender);
     }
 
-    public String getUserNumber() {
-        return faker.numerify("##########");
+    public static String getUserNumber() {
+        return Faker.instance().numerify("##########");
     }
 
-    public String getUserSubject() {
+    public static String getUserSubject() {
         String[] subject = {"Hindi", "English", "Maths", "Physics", "Chemistry",
                 "Biology", "Computer Science", "Commerce",
                 "Accounting", "Economics", "Arts", "Social Studies", "History", "Civics"};
-        return faker.options().option(subject);
+        return Faker.instance().options().option(subject);
     }
 
-    public String getUserHobby() {
+    public static String getUserHobby() {
         String[] hobby = {"Sports", "Reading", "Music"};
-        return faker.options().option(hobby);
+        return Faker.instance().options().option(hobby);
     }
 
-    public String getUserAddress() {
-        return faker.address().fullAddress();
+    public static String getUserAddress() {
+        return Faker.instance().address().fullAddress();
     }
 
-    public String getUserState() {
+    public static String getUserState() {
         String[] userState = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
-        return faker.options().option(userState);
+        return Faker.instance().options().option(userState);
     }
 
-    public String getUserCity(String stateName) {
+    public static String getUserCity(String stateName) {
         switch (stateName) {
             case "NCR" -> {
                 String[] city = {"Delhi", "Gurgaon", "Noida"};
-                return faker.options().option(city);
+                return Faker.instance().options().option(city);
             }
             case "Uttar Pradesh" -> {
                 String[] city = {"Agra", "Lucknow", "Merrut"};
-                return faker.options().option(city);
+                return Faker.instance().options().option(city);
             }
             case "Haryana" -> {
                 String[] city = {"Karnal", "Panipat"};
-                return faker.options().option(city);
+                return Faker.instance().options().option(city);
             }
             case "Rajasthan" -> {
                 String[] city = {"Jaipur", "Jaiselmer"};
-                return faker.options().option(city);
+                return Faker.instance().options().option(city);
             }
         }
         return null;
     }
 
-    public String getUserBirthDay(String year, String month) {
+    public static String getUserBirthDay(String year, String month) {
         int day = getRandomInt(1, 31);
         Set<String> set = new HashSet<>(Arrays.asList("March", "April", "June", "September", "November"));
         if (day < 10) {
@@ -94,22 +88,22 @@ public class FakerUtils {
         return Integer.toString(day);
     }
 
-    public String getUserBirthMonth() {
+    public static String getUserBirthMonth() {
         String[] userMonth = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-        return faker.options().option(userMonth);
+        return Faker.instance().options().option(userMonth);
     }
 
-    public String getUserBirthYear() {
+    public static String getUserBirthYear() {
         int year = getRandomInt(1900, 2100);
         return Integer.toString(year);
     }
 
-    public String getUserFile() {
+    public static String getUserFile() {
         String[] files = {"cat.jpg", "text.txt"};
-        return faker.options().option(files);
+        return Faker.instance().options().option(files);
     }
 
-
-
-
+    private static int getRandomInt(int min, int max) {
+        return ThreadLocalRandom.current().nextInt(min, max + 1);
+    }
 }
