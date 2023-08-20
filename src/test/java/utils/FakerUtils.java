@@ -9,55 +9,55 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 public class FakerUtils {
-    static Faker faker = new Faker();
+    Faker faker = new Faker();
 
-    public static int getRandomInt(int min, int max) {
+    public int getRandomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
 
-    public static String getFirstName() {
+    public String getFirstName() {
         return faker.name().firstName();
     }
 
-    public static String getLastName() {
+    public String getLastName() {
         return faker.name().lastName();
     }
 
-    public static String getUserEmail() {
+    public String getUserEmail() {
         return faker.internet().emailAddress();
     }
 
-    public static String getUserGender() {
+    public String getUserGender() {
         String[] gender = {"Male", "Female", "Other"};
         return faker.options().option(gender);
     }
 
-    public static String getUserNumber() {
+    public String getUserNumber() {
         return faker.numerify("##########");
     }
 
-    public static String getUserSubject() {
+    public String getUserSubject() {
         String[] subject = {"Hindi", "English", "Maths", "Physics", "Chemistry",
                 "Biology", "Computer Science", "Commerce",
                 "Accounting", "Economics", "Arts", "Social Studies", "History", "Civics"};
         return faker.options().option(subject);
     }
 
-    public static String getUserHobby() {
+    public String getUserHobby() {
         String[] hobby = {"Sports", "Reading", "Music"};
         return faker.options().option(hobby);
     }
 
-    public static String getUserAddress() {
+    public String getUserAddress() {
         return faker.address().fullAddress();
     }
 
-    public static String getUserState() {
+    public String getUserState() {
         String[] userState = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
         return faker.options().option(userState);
     }
 
-    public static String getUserCity(String stateName) {
+    public String getUserCity(String stateName) {
         switch (stateName) {
             case "NCR" -> {
                 String[] city = {"Delhi", "Gurgaon", "Noida"};
@@ -79,7 +79,7 @@ public class FakerUtils {
         return null;
     }
 
-    public static String getUserBirthDay(String year, String month) {
+    public String getUserBirthDay(String year, String month) {
         int day = getRandomInt(1, 31);
         Set<String> set = new HashSet<>(Arrays.asList("March", "April", "June", "September", "November"));
         if (day < 10) {
@@ -94,17 +94,17 @@ public class FakerUtils {
         return Integer.toString(day);
     }
 
-    public static String getUserBirthMonth() {
+    public String getUserBirthMonth() {
         String[] userMonth = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         return faker.options().option(userMonth);
     }
 
-    public static String getUserBirthYear() {
+    public String getUserBirthYear() {
         int year = getRandomInt(1900, 2100);
         return Integer.toString(year);
     }
 
-    public static String getUserFile() {
+    public String getUserFile() {
         String[] files = {"cat.jpg", "text.txt"};
         return faker.options().option(files);
     }
