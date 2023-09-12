@@ -43,7 +43,7 @@ public class RegistrationWithPageObjectsWithFakerTest extends TestBase {
                 .setSubmit()
         );
 
-        step("Check the resalts", () ->
+        step("Check the results", () ->
         registrationPageModal.checkHeader()
                 .checkText("Student Name", user.firstName + " " + user.lastName)
                 .checkText("Student Email", user.email)
