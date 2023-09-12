@@ -11,7 +11,7 @@ import static io.qameta.allure.Allure.step;
 
 @Tag("simple")
 @DisplayName("Registration page")
-public class RegistrationWithPageObjectsWithFakerTest extends TestBase {
+public class RegistrationWithFakerTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationPageModal registrationPageModal = new RegistrationPageModal();
