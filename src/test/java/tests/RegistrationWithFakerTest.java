@@ -1,7 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.WebDriverRunner;
-import io.qameta.allure.Allure;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -9,7 +7,6 @@ import pages.RegistrationPage;
 import pages.RegistrationPageModal;
 import utils.UserVariables;
 
-import java.nio.charset.StandardCharsets;
 
 import static io.qameta.allure.Allure.step;
 
@@ -25,7 +22,6 @@ public class RegistrationWithFakerTest extends TestBase {
 
     void fillFormTest() {
         UserVariables user = new UserVariables();
-
 
         step("Open registration form", () -> {
             registrationPage.openPage()
@@ -60,12 +56,6 @@ public class RegistrationWithFakerTest extends TestBase {
                     .checkText("Picture", user.file)
                     .checkText("Address", user.address)
                     .checkText("State and City", user.state + " " + user.city);
-
-            Allure.getLifecycle().addAttachment(
-                    "Исходники страницы",
-                    "text/html",
-                    "html",
-                    WebDriverRunner.getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8));
         });
     }
 }
