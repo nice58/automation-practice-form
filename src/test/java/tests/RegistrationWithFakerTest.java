@@ -22,39 +22,39 @@ public class RegistrationWithFakerTest extends TestBase {
     void fillFormTest() {
         UserVariables user = new UserVariables();
 
-        step("Open registration form", () ->
-        registrationPage.openPage()
-                .remove()
-        );
+        step("Open registration form", () -> {
+            registrationPage.openPage()
+                    .remove();
+        });
 
-        step("Fill the form", () ->
-        registrationPage.setFirstName(user.firstName)
-                .setLastName(user.lastName)
-                .setUserEmail(user.email)
-                .setGender(user.gender)
-                .setMobileNumber(user.number)
-                .setBirthDate(user.birthDay, user.birthMonth, user.birthYear)
-                .setSubjects(user.subject)
-                .setHobby(user.hobby)
-                .setPicture(user.file)
-                .setAddress(user.address)
-                .setState(user.state)
-                .setCity(user.city)
-                .setSubmit()
-        );
+        step("Fill the form", () -> {
+            registrationPage.setFirstName(user.firstName)
+                    .setLastName(user.lastName)
+                    .setUserEmail(user.email)
+                    .setGender(user.gender)
+                    .setMobileNumber(user.number)
+                    .setBirthDate(user.birthDay, user.birthMonth, user.birthYear)
+                    .setSubjects(user.subject)
+                    .setHobby(user.hobby)
+                    .setPicture(user.file)
+                    .setAddress(user.address)
+                    .setState(user.state)
+                    .setCity(user.city)
+                    .setSubmit();
+        });
 
-        step("Check the results", () ->
-        registrationPageModal.checkHeader()
-                .checkText("Student Name", user.firstName + " " + user.lastName)
-                .checkText("Student Email", user.email)
-                .checkText("Gender", user.gender)
-                .checkText("Mobile", user.number)
-                .checkText("Date of Birth", user.birthDay + " " + user.birthMonth + "," + user.birthYear)
-                .checkText("Subjects", user.subject)
-                .checkText("Hobbies", user.hobby)
-                .checkText("Picture", user.file)
-                .checkText("Address", user.address)
-                .checkText("State and City", user.state + " " + user.city)
-        );
+        step("Check the results", () -> {
+            registrationPageModal.checkHeader()
+                    .checkText("Student Name", user.firstName + " " + user.lastName)
+                    .checkText("Student Email", user.email)
+                    .checkText("Gender", user.gender)
+                    .checkText("Mobile", user.number)
+                    .checkText("Date of Birth", user.birthDay + " " + user.birthMonth + "," + user.birthYear)
+                    .checkText("Subjects", user.subject)
+                    .checkText("Hobbies", user.hobby)
+                    .checkText("Picture", user.file)
+                    .checkText("Address", user.address)
+                    .checkText("State and City", user.state + " " + user.city);
+        });
     }
 }
