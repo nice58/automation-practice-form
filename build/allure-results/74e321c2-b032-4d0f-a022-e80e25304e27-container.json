@@ -1,0 +1,1 @@
+{"uuid":"74e321c2-b032-4d0f-a022-e80e25304e27","name":"Successful registration","children":["2f7080e8-7620-4971-ab6d-a84edccc552e"],"befores":[{"name":"addListener","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1694556049641,"stop":1694556049647}],"afters":[],"start":1694556049575,"stop":1694556057307}
