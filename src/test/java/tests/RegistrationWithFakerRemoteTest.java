@@ -12,12 +12,13 @@ import static io.qameta.allure.Allure.step;
 
 @Tag("simple")
 @DisplayName("Registration page")
-public class RegistrationWithFakerTest extends TestBase {
+public class RegistrationWithFakerRemoteTest extends RemoteTestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationPageModal registrationPageModal = new RegistrationPageModal();
 
     @Test
+    @Tag("remote")
     @DisplayName("Successful registration")
 
     void fillFormTest() {
