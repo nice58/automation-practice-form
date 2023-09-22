@@ -10,7 +10,6 @@ import utils.UserVariables;
 
 import static io.qameta.allure.Allure.step;
 
-@Tag("simple")
 @DisplayName("Registration page")
 public class RegistrationWithFakerRemoteTest extends RemoteTestBase {
 
