@@ -53,21 +53,21 @@ public class FakerUtils {
 
     public static String getUserCity(String stateName) {
         switch (stateName) {
-            case "NCR" -> {
+            case "NCR": {
                 String[] city = {"Delhi", "Gurgaon", "Noida"};
-                return Faker.instance().options().option(city);
+                return new Faker().options().option(city);
             }
-            case "Uttar Pradesh" -> {
+            case "Uttar Pradesh": {
                 String[] city = {"Agra", "Lucknow", "Merrut"};
-                return Faker.instance().options().option(city);
+                return new Faker().options().option(city);
             }
-            case "Haryana" -> {
+            case "Haryana": {
                 String[] city = {"Karnal", "Panipat"};
-                return Faker.instance().options().option(city);
+                return new Faker().options().option(city);
             }
-            case "Rajasthan" -> {
+            case "Rajasthan": {
                 String[] city = {"Jaipur", "Jaiselmer"};
-                return Faker.instance().options().option(city);
+                return new Faker().options().option(city);
             }
         }
         return null;
